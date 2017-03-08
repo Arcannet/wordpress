@@ -10,6 +10,7 @@ services:
    - MYSQL_PASSWORD=wp
   volumes:
    - ./data/mysql-wp:/var/lib/mysql
+  restart: always
    
  phpmyadmin:
   image: phpmyadmin/phpmyadmin
@@ -28,7 +29,7 @@ services:
  wordpress:
   image: wordpress
   ports:
-   - 10180:80
+   - 80:80
   links:
    - mysql-wp:db
   depends_on:
@@ -38,5 +39,6 @@ services:
   environment:
    - WORDPRESS_DB_HOST=db:3306
    - WORDPRESS_DB_PASSWORD=wp
+  restart: always
    
  
