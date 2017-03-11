@@ -4,10 +4,7 @@ services:
  mysql-wp:
   image: mysql
   environment:
-   - MYSQL_ROOT_PASSWORD=wp
-   - MYSQL_DATABASE=wp
-   - MYSQL_USER=wp
-   - MYSQL_PASSWORD=wp
+   - MYSQL_RANDOM_ROOT_PASSWORD=yes
   volumes:
    - ./data/mysql-wp:/var/lib/mysql
   restart: always
@@ -22,9 +19,6 @@ services:
     - 8083:80
   environment:
    - PMA_PORT=3306
-   - MYSQL_USER=wp
-   - MYSQL_PASSWORD=wp
-   - MYSQL_ROOT_PASSWORD=wp
    
  wordpress:
   image: wordpress
@@ -38,7 +32,6 @@ services:
    - ./persist/wp-content:/var/www/html/wp-content 
   environment:
    - WORDPRESS_DB_HOST=db:3306
-   - WORDPRESS_DB_PASSWORD=wp
   restart: always
    
  
