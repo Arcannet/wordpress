@@ -5,6 +5,6 @@ author: neero
 post_date: 2017-03-21 21:18:54
 post_excerpt: ""
 layout: page
-permalink: http://arcann.net/la-forge-darzzus/
+permalink: http://arcann.net/arzzus/
 published: true
 ---
